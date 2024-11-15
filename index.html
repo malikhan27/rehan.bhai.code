@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip the Coin Game</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="style1.css">
+
+<body id="body" class="">
+
+    <div id="pname" class="container main d-flex justify-content-center flex-column w-100 mt-5 mb-5">
+        <div>
+            <h4>Please enter players Name</h4>
+        </div>
+        <div class="row d-flex justify-content-center mt-2 mb-2 main-1 ">
+            <div class="col-md-12 d-flex justify-content-center mt-3">
+                <label for="player1" class="col-md-6 col-form-label">Enter Player-1 Name</label>
+                <input type="text" class="form-control w-75" id="player1" placeholder="Enter player 1 name">
+            </div>
+
+
+            <div class="col-md-12 d-flex mt-3 d-flex justify-content-center">
+                <label for="player2" class="col-md-6 col-form-label">Enter Player-2 Name</label>
+                <input type="text" class=" form-control w-75" id="player2" placeholder="Enter player 2 name">
+
+            </div>
+
+            <div class="col-md-12 mt-2 d-flex justify-content-center">
+                <button onclick="startGame()" type="button" class="btn btn_submit btn-primary">Start
+                    Game</button>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="maindiv" class="container main d-flex justify-content-center mt-5 mb-5 d-none">
+
+        <div class="row ">
+            <div class="col-md-12">
+                <h1 class="heading">Welcome to 'The Flip Coins Game!' </h1>
+            </div>
+
+
+
+
+            <div class=" row player1_detail d-flex justify-content-center mt-2">
+
+                <div class=" col-12 col-md-6 justify-content-center d-flex ">
+                    <div class="player1_box">
+                        <div>
+                            <h6>Player 1 Name</h6>
+                        </div>
+
+                        <div id="p1name" class="p1name">
+                        </div>
+
+
+                        <div class="mt-2 col-md-6 justify-content-center d-flex">
+                            <h6>Player 1 Selected</h6>
+                        </div>
+
+                        <div id="p1slected" class="p1slection">
+
+
+                        </div>
+
+
+                    </div>
+
+<!-- ************************************ apne div andr bana di thi yara ****************************** -->
+
+                    <!-- <div class="col-12 col-md-6 justify-content-center d-flex ">
+                        <div class="player2_box">
+                            <div>
+                                <h6>Player 2 Name</h6>
+                            </div>
+
+                            <div id="p2name" class="p1name">
+
+
+                            </div>
+
+
+                            <div class="mt-2 col-md-6">
+                                <h6>Player 2 Selected</h6>
+                            </div>
+
+                            <div id="p2slected" class="p1slection">
+
+                            </div>
+
+
+                        </div>
+                    </div> -->
+
+
+                </div>
+                <div class="col-12 mt-3 mt-md-0 col-md-6 justify-content-center d-flex ">
+                    <div class="player2_box">
+                        <div>
+                            <h6>Player 2 Name</h6>
+                        </div>
+
+                        <div id="p2name" class="p1name">
+
+
+                        </div>
+
+
+                        <div class="mt-2 col-md-6">
+                            <h6>Player 2 Selected</h6>
+                        </div>
+
+                        <div id="p2slected" class="p1slection">
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-5 justify-content-center d-flex ">
+
+                <div class="col-md-12">
+                    <div class="select-coin">
+                        <h4>Select The Coin</h4>
+                    </div>
+
+
+                    <div class="col-md-12 justify-content-center d-flex mt-5">
+
+
+                        <img id="headimg" src="assets/head.jpg" alt="..">
+                        <img id="tailimg" src="assets/tail.jpg" alt="..">
+
+
+                    </div>
+
+                    <div class="col-md-12 justify-content-center d-flex mt-1">
+                        <div class="d-flex justify-content-center">
+                            <button onclick="clikonhead ()" id="btn_1" class="button1_img ">Select Head</button>
+                            <button onclick="clikontail ()" id="btn_2" class="button2_img ">Select Tail</button>
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="col-md-12 mt-5 justify-content-center d-flex">
+                    <div>
+                        <img id="image-coin" class="flipstill" src="assets/flipstill.PNG" alt="">
+                    </div>
+                </div>
+
+                <div class="col-md-12 justify-content-center d-flex mt-1">
+                    <div>
+                        <button onclick="flipcoin()" id="btn_flip" class="button3_img ">Flip Coin</button>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div> <!-- DIV KA CLOSING TAG NHI BANAYA THA -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
